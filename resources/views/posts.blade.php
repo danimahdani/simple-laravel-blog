@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('container')
-    <h1 class="mb-5">Halaman Blog Posts</h1>
+    <h1 class="mb-5">{{ $title }}</h1>
 
 
     @foreach ($posts as $post)
@@ -14,6 +14,9 @@
             <h5>By:
                 <a href="/authors/{{ $post->author->username }}" class="text-decoration-none">
                     {{ $post->author->name }}
+                </a> in
+                <a href="/categories/{{ $post->category->slug }}">
+                    {{ $post->category->name }}
                 </a>
             </h5>
             <p>{{ $post->excerpt }}</p>
