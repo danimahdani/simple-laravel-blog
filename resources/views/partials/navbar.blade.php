@@ -16,10 +16,10 @@
                 <li class="nav-item">
                     <a class="nav-link {{ $active === 'posts' ? 'active' : '' }}" href="/posts">Blog</a>
                 </li>
-                {{-- <li class="nav-item">
+                <li class="nav-item">
                     <a class="nav-link {{ $active === 'categories' ? 'active' : '' }}"
                         href="/categories">Categories</a>
-                </li> --}}
+                </li>
             </ul>
 
             {{-- <ul class="navbar-nav ms-auto">
