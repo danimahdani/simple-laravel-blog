@@ -46,6 +46,15 @@ class Post extends Model
 
     }
 
+    /**
+     * override parameter id for route resource
+     * https://laravel.com/docs/8.x/routing#customizing-the-default-key-name
+     */
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
     public function category()
     {
         return $this->belongsTo(Category::class);
