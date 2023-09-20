@@ -9,32 +9,30 @@
             {{ session('success') }}
         </div>
     @endif
-    <a href="/dashboard/posts/create" class="btn btn-primary mb-3">Create new Post</a>
+    <a href="/dashboard/posts/create" class="btn btn-primary mb-3">Create new category</a>
 
     <div class="col-lg-8">
         <table class="table table-responsive">
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Title</th>
-                    <th scope="col">Category</th>
+                    <th scope="col">Category Name</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($posts as $post)
+                @foreach ($categories as $category)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{ $post->title }}</td>
-                        <td>{{ $post->category->name }}</td>
+                        <td>{{ $category->name }}</td>
                         <td>
-                            <a href="/dashboard/posts/{{ $post->slug }}" class="badge bg-info">
+                            <a href="/dashboard/categories/{{ $category->slug }}" class="badge bg-info">
                                 <span data-feather="eye"></span>
                             </a>
-                            <a href="/dashboard/posts/{{ $post->slug }}/edit" class="badge bg-warning">
+                            <a href="/dashboard/categories/{{ $category->slug }}/edit" class="badge bg-warning">
                                 <span data-feather="edit"></span>
                             </a>
-                            <form action="/dashboard/posts/{{ $post->slug }}" method="post" class="d-inline">
+                            <form action="/dashboard/categories/{{ $category->slug }}" method="post" class="d-inline">
                                 @method('DELETE')
                                 @csrf
                                 <button class="badge bg-danger border-0" onclick="return confirm('Are you sure delete ?')">
